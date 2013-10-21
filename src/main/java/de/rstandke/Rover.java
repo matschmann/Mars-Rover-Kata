@@ -19,14 +19,22 @@ public class Rover {
         for (Command command : commands) {
             switch (command) {
                 case FORWARD:
-                    position.setX(position.getX() + 1);
+                    stepEast();
                     break;
                 case BACKWARD:
-                    position.setX(position.getX() - 1);
+                    stepWest();
                     break;
             }
         }
 
+    }
+
+    private void stepWest() {
+        position.setX(position.getX() - 1);
+    }
+
+    private void stepEast() {
+        position.setX(position.getX() + 1);
     }
 
     public Position getPositionOnGrid() {
