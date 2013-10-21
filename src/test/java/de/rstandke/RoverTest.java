@@ -19,12 +19,22 @@ public class RoverTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void createRover_inDirections_throwsException() throws Exception {
+    public void createRover_invalidDirectionX_throwsException() throws Exception {
         // arrange
 
         // act
-        Rover rover = new Rover(-1, 1, Direction.NORTH);
+        new Rover(-1, 1, Direction.NORTH);
 
     }
+    @Test(expected = IllegalArgumentException.class)
+    public void createRover_invalidDirectionY_throwsException() throws Exception {
+        // arrange
+
+        // act
+        new Rover(0, -42, Direction.NORTH);
+
+    }
+
+
 
 }

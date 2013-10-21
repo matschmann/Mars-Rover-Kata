@@ -6,6 +6,11 @@ package de.rstandke;
  */
 public class Rover {
     public Rover(int x, int y, Direction direction) {
-        //To change body of created methods use File | Settings | File Templates.
+        //check parameters
+        if (x < 0 || y < 0) {
+            throw new IllegalArgumentException("starting point must not be < 0");
+        }
+
+
     }
 }
