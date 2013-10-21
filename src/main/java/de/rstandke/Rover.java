@@ -6,10 +6,7 @@ package de.rstandke;
  */
 public class Rover {
     public Rover(int x, int y, Direction direction) {
-        //check parameters
-        if (x < 0 || y < 0) {
-            throw new IllegalArgumentException("starting point must not be < 0");
-        }
+
 
 
     }
