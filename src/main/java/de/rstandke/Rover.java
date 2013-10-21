@@ -6,7 +6,7 @@ package de.rstandke;
  */
 public class Rover {
     private final Position position;
-    private final Direction direction;
+    private Direction direction;
 
     public Rover(Position position, Direction direction) {
         this.position = position;
@@ -18,6 +18,14 @@ public class Rover {
             switch (command) {
                 case FORWARD: stepForward(); break;
                 case BACKWARD: stepBackward(); break;
+                case TURN_RIGHT:
+                    switch (direction) {
+                        case EAST:this.direction = Direction.SOUTH;
+                        case WEST:this.direction = Direction.NORTH;
+                        case NORTH:this.direction = Direction.EAST;
+                        case SOUTH:this.direction = Direction.WEST;
+                    }
+                    break;
                 default:
                     throw new IllegalArgumentException("command is " + command + " is not yet supported");
             }
