@@ -1,7 +1,5 @@
 package de.rstandke;
 
-import com.sun.org.apache.bcel.internal.generic.SWITCH;
-
 /**
  * @author rstandke
  * @version ${project.version}
@@ -19,14 +17,30 @@ public class Rover {
         for (Command command : commands) {
             switch (command) {
                 case FORWARD:
-                    stepEast();
+                    stepForward();
                     break;
                 case BACKWARD:
-                    stepWest();
+                    stepBackward();
                     break;
             }
         }
 
+    }
+
+    private void stepBackward() {
+        if (direction == Direction.EAST) {
+            stepWest();
+        } else if (direction == Direction.WEST) {
+            stepEast();
+        }
+    }
+
+    private void stepForward() {
+        if (direction == Direction.EAST) {
+            stepEast();
+        } else if (direction == Direction.WEST) {
+            stepWest();
+        }
     }
 
     private void stepWest() {
