@@ -5,10 +5,12 @@ package de.rstandke;
  * @version ${project.version}
  */
 public class Rover {
-    public Rover(int x, int y, Direction direction) {
+    private final Position position;
+    private final Direction direction;
 
-
-
+    public Rover(Position position, Direction direction) {
+        this.position = position;
+        this.direction = direction;
     }
 
     public void go(Command... commands) {

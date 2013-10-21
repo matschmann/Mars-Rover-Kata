@@ -11,7 +11,7 @@ public class RoverTest {
         // arrange
 
         // act
-        Rover rover = new Rover(1,1,Direction.NORTH);
+        Rover rover = new Rover(new Position(1,1),Direction.NORTH);
 
         // assert
         assertThat(rover).isNotNull();
@@ -23,7 +23,7 @@ public class RoverTest {
         // arrange
 
         // act
-        Rover rover = new Rover(0, 0, Direction.EAST);
+        Rover rover = new Rover(new Position(0, 0), Direction.EAST);
         rover.go(Command.FORWARD, Command.BACKWARD, Command.FORWARD, Command.FORWARD);
 
         // assert
