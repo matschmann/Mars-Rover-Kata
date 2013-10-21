@@ -28,10 +28,17 @@ public class PositionTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void createPosition_invalidValues_throwsException() throws Exception {
+    public void createPosition_invalidValueX_throwsException() throws Exception {
         // arrange
 
         // act
         new Position(-1, 1);
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void createPosition_invalidValueY_throwsException() throws Exception {
+        // arrange
+
+        // act
+        new Position(1, -1);
     }
 }
