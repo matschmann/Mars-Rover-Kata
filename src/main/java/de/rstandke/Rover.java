@@ -16,40 +16,38 @@ public class Rover {
     public void go(Command... commands) {
         for (Command command : commands) {
             switch (command) {
-                case FORWARD:
-                    stepForward();
-                    break;
-                case BACKWARD:
-                    stepBackward();
-                    break;
+                case FORWARD: stepForward(); break;
+                case BACKWARD: stepBackward(); break;
+                default:
+                    throw new IllegalArgumentException("command is " + command + " is not yet supported");
             }
         }
 
     }
 
     private void stepBackward() {
-        if (direction == Direction.EAST) {
-            stepWest();
-        } else if (direction == Direction.WEST) {
-            stepEast();
-        } else if (direction == Direction.NORTH) {
-            stepSouth();
-        }  else if (direction == Direction.SOUTH) {
-            stepNorth();
+        switch (direction) {
+            case EAST:stepWest(); break;
+            case WEST:stepEast(); break;
+            case NORTH:stepSouth(); break;
+            case SOUTH:stepNorth(); break;
+            default:
+                throw new IllegalArgumentException("direction is " + direction + " is not yet supported");
+
         }
     }
 
     private void stepForward() {
-        if (direction == Direction.EAST) {
-            stepEast();
-        } else if (direction == Direction.WEST) {
-            stepWest();
-        } else if (direction == Direction.NORTH) {
-            stepNorth();
-        }  else if (direction == Direction.SOUTH) {
-            stepSouth();
+        switch (direction) {
+            case EAST:stepEast(); break;
+            case WEST:stepWest(); break;
+            case NORTH:stepNorth(); break;
+            case SOUTH:stepSouth(); break;
+            default:
+                throw new IllegalArgumentException("direction is " + direction + " is not yet supported");
         }
     }
+
 
     private void stepSouth() {
         position.setY(position.getY() + 1);

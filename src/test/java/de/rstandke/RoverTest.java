@@ -84,8 +84,4 @@ public class RoverTest {
         assertThat(rover.getPositionOnGrid().getY()).isEqualTo(1);
     }
 
-
-
-
-
 }
