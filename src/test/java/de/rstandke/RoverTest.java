@@ -35,6 +35,19 @@ public class RoverTest {
 
     }
 
+    @Test
+    public void go_fbffb_1() throws Exception {
+        // arrange
+
+        // act
+        Rover rover = new Rover(0, 0, Direction.EAST);
+        rover.go(Command.FORWARD, Command.BACKWARD, Command.FORWARD, Command.FORWARD);
+
+        // assert
+        assertThat(rover).isNotNull();
+        assertThat(rover.getPositionOnGrid().getX()).isEqualTo(1);
+    }
+
 
 
 }
