@@ -106,6 +106,7 @@ public class RoverTest {
         assertThat(rover.getPositionOnGrid()).isEqualTo(expectedPosition);
 
     }
+
     @Test
     public void go_aLeftCircle_shouldArriveAtStartPosition() throws Exception {
         // arrange
@@ -126,7 +127,24 @@ public class RoverTest {
         // assert
         assertThat(rover).isNotNull();
         assertThat(rover.getPositionOnGrid()).isEqualTo(expectedPosition);
+    }
 
+    @Test
+    public void promenade() throws Exception {
+        // arrange
+        Command[] commands = new Command[]{Command.FORWARD, Command.FORWARD, Command.TURN_LEFT, Command.BACKWARD,
+                Command.TURN_LEFT, Command.FORWARD, Command.FORWARD, Command.FORWARD, Command.TURN_RIGHT,
+                Command.FORWARD, Command.FORWARD, Command.FORWARD, Command.TURN_LEFT, Command.FORWARD,
+                Command.TURN_RIGHT, Command.FORWARD};
+        Direction startDirection = Direction.EAST;
+        Position startPos = new Position(3, 4);
+
+        // act
+        Rover rover = new Rover(startPos, startDirection);
+        rover.go(commands);
+
+        // assert
+        assertThat(rover.getPositionOnGrid()).isEqualTo(new Position(2, 2));
     }
 
 }

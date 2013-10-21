@@ -23,6 +23,7 @@ public class Rover {
                 default:
                     throw new IllegalArgumentException("command is " + command + " is not yet supported");
             }
+            System.out.printf("moved to %s%n", position);
         }
 
     }
