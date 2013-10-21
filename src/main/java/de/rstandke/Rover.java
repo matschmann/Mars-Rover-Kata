@@ -32,6 +32,10 @@ public class Rover {
             stepWest();
         } else if (direction == Direction.WEST) {
             stepEast();
+        } else if (direction == Direction.NORTH) {
+            stepSouth();
+        }  else if (direction == Direction.SOUTH) {
+            stepNorth();
         }
     }
 
@@ -40,7 +44,19 @@ public class Rover {
             stepEast();
         } else if (direction == Direction.WEST) {
             stepWest();
+        } else if (direction == Direction.NORTH) {
+            stepNorth();
+        }  else if (direction == Direction.SOUTH) {
+            stepSouth();
         }
+    }
+
+    private void stepSouth() {
+        position.setY(position.getY() + 1);
+    }
+
+    private void stepNorth() {
+        position.setY(position.getY() - 1);
     }
 
     private void stepWest() {
