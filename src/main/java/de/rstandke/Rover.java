@@ -18,19 +18,21 @@ public class Rover {
             switch (command) {
                 case FORWARD: stepForward(); break;
                 case BACKWARD: stepBackward(); break;
-                case TURN_RIGHT:
-                    switch (direction) {
-                        case EAST:this.direction = Direction.SOUTH;
-                        case WEST:this.direction = Direction.NORTH;
-                        case NORTH:this.direction = Direction.EAST;
-                        case SOUTH:this.direction = Direction.WEST;
-                    }
-                    break;
+                case TURN_RIGHT: turnRight(); break;
                 default:
                     throw new IllegalArgumentException("command is " + command + " is not yet supported");
             }
         }
 
+    }
+
+    private void turnRight() {
+        switch (direction) {
+            case EAST:this.direction = Direction.SOUTH;
+            case WEST:this.direction = Direction.NORTH;
+            case NORTH:this.direction = Direction.EAST;
+            case SOUTH:this.direction = Direction.WEST;
+        }
     }
 
     private void stepBackward() {
