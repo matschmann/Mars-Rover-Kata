@@ -26,4 +26,12 @@ public class PositionTest {
         assertThat(position.getY()).isEqualTo(expectedY);
 
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void createPosition_invalidValues_throwsException() throws Exception {
+        // arrange
+
+        // act
+        new Position(-1, 1);
+    }
 }
