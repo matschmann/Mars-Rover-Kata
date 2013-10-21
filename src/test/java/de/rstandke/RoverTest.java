@@ -24,7 +24,7 @@ public class RoverTest {
 
         // act
         Rover rover = new Rover(new Position(0, 0), Direction.EAST);
-        rover.go(Command.FORWARD, Command.BACKWARD, Command.FORWARD, Command.FORWARD);
+        rover.go(Command.FORWARD, Command.BACKWARD, Command.FORWARD, Command.FORWARD, Command.BACKWARD);
 
         // assert
         assertThat(rover).isNotNull();
