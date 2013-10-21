@@ -23,17 +23,17 @@ public class Rover {
                 default:
                     throw new IllegalArgumentException("command is " + command + " is not yet supported");
             }
-            System.out.printf("moved to %s%n", position);
+            System.out.printf("moved to %s, direction is %s %n", position, direction);
         }
 
     }
 
     private void turnRight() {
         switch (direction) {
-            case EAST:this.direction = Direction.SOUTH;
-            case WEST:this.direction = Direction.NORTH;
-            case NORTH:this.direction = Direction.EAST;
-            case SOUTH:this.direction = Direction.WEST;
+            case EAST:this.direction = Direction.SOUTH; break;
+            case SOUTH:this.direction = Direction.WEST; break;
+            case WEST:this.direction = Direction.NORTH; break;
+            case NORTH:this.direction = Direction.EAST; break;
         }
     }
 
