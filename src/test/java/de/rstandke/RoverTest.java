@@ -144,7 +144,7 @@ public class RoverTest {
         rover.go(commands);
 
         // assert
-        assertThat(rover.getPositionOnGrid()).isEqualTo(new Position(2, 2));
+        assertThat(rover.getPositionOnGrid()).isEqualTo(new Position(1, 1));
     }
 
 }
