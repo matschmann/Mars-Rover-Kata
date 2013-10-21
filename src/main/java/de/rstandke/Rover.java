@@ -1,5 +1,7 @@
 package de.rstandke;
 
+import com.sun.org.apache.bcel.internal.generic.SWITCH;
+
 /**
  * @author rstandke
  * @version ${project.version}
@@ -14,10 +16,20 @@ public class Rover {
     }
 
     public void go(Command... commands) {
+        for (Command command : commands) {
+            switch (command) {
+                case FORWARD:
+                    position.setX(position.getX() + 1);
+                    break;
+                case BACKWARD:
+                    position.setX(position.getX() - 1);
+                    break;
+            }
+        }
 
     }
 
     public Position getPositionOnGrid() {
-        return null;  //To change body of created methods use File | Settings | File Templates.
+        return position;
     }
 }

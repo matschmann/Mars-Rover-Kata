@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  * @version ${project.version}
  */
 public class Position {
-    private final int x, y;
+    private int x, y;
 
     public Position(int x, int y) {
         //check parameters
@@ -25,5 +25,13 @@ public class Position {
 
     public int getY() {
         return y;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 }
