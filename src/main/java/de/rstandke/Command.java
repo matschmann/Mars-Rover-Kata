@@ -5,5 +5,5 @@ package de.rstandke;
  * @version ${project.version}
  */
 public enum Command {
-    BACKWARD, FORWARD
+    BACKWARD, FORWARD, TURN_RIGHT, TURN_LEFT;
 }

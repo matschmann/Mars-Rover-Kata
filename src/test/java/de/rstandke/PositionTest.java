@@ -1,5 +1,7 @@
 package de.rstandke;
 
+import nl.jqno.equalsverifier.EqualsVerifier;
+import nl.jqno.equalsverifier.Warning;
 import org.junit.Test;
 
 import static org.fest.assertions.Assertions.assertThat;
@@ -40,5 +42,13 @@ public class PositionTest {
 
         // act
         new Position(1, -1);
+    }
+
+    @Test
+    public void equalsContract() throws Exception {
+        EqualsVerifier.forClass(Position.class)
+                .usingGetClass()
+                .suppress(Warning.NONFINAL_FIELDS)
+                .verify();
     }
 }
