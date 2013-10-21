@@ -62,19 +62,35 @@ public class Rover {
 
 
     private void stepSouth() {
-        position.setY(position.getY() + 1);
+        if (position.getY() == Integer.MAX_VALUE) {
+            position.setY(0);
+        } else {
+            position.setY(position.getY() + 1);
+        }
     }
 
     private void stepNorth() {
-        position.setY(position.getY() - 1);
+        if (position.getY() == 0) {
+            position.setY(Integer.MAX_VALUE);
+        } else {
+            position.setY(position.getY() - 1);
+        }
     }
 
     private void stepWest() {
-        position.setX(position.getX() - 1);
+        if (position.getX() == 0) {
+            position.setX(Integer.MAX_VALUE);
+        } else {
+            position.setX(position.getX() - 1);
+        }
     }
 
     private void stepEast() {
-        position.setX(position.getX() + 1);
+        if (position.getX() == Integer.MAX_VALUE) {
+            position.setX(0);
+        } else {
+            position.setX(position.getX() + 1);
+        }
     }
 
     public Position getPositionOnGrid() {
