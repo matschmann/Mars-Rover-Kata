@@ -155,4 +155,59 @@ public class RoverTest {
         assertThat(rover.getPositionOnGrid()).isEqualTo(new Position(1, 1));
     }
 
+    @Test
+    public void go_wrapFromRightEdgeToLeftEdge_0() throws Exception {
+        // arrange
+        final Position position = new Position(Integer.MAX_VALUE, 0);
+        final Direction east = Direction.EAST;
+
+        // act
+        Rover rover = new Rover(position, east);
+        rover.go(Command.FORWARD);
+
+        // assert
+        assertThat(rover.getPositionOnGrid().getX()).isEqualTo(0);
+    }
+    @Test
+    public void go_wrapFromLefttEdgeToRightEdge_MAX_INT() throws Exception {
+        // arrange
+        final Position position = new Position(0, 0);
+        final Direction east = Direction.EAST;
+
+        // act
+        Rover rover = new Rover(position, east);
+        rover.go(Command.BACKWARD);
+
+        // assert
+        assertThat(rover.getPositionOnGrid().getX()).isEqualTo(Integer.MAX_VALUE);
+    }
+
+    @Test
+    public void go_wrapFromTopEdgeToBottomEdge_MAX_INT() throws Exception {
+        // arrange
+        final Position position = new Position(0, 0);
+        final Direction east = Direction.NORTH;
+
+        // act
+        Rover rover = new Rover(position, east);
+        rover.go(Command.FORWARD);
+
+        // assert
+        assertThat(rover.getPositionOnGrid().getY()).isEqualTo(Integer.MAX_VALUE);
+    }
+
+    @Test
+    public void go_wrapFromBottomEdgeToTopEdge_0() throws Exception {
+        // arrange
+        final Position position = new Position(0, Integer.MAX_VALUE);
+        final Direction east = Direction.NORTH;
+
+        // act
+        Rover rover = new Rover(position, east);
+        rover.go(Command.BACKWARD);
+
+        // assert
+        assertThat(rover.getPositionOnGrid().getY()).isEqualTo(0);
+    }
+
 }
