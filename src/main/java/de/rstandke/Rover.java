@@ -19,6 +19,7 @@ public class Rover {
                 case FORWARD: stepForward(); break;
                 case BACKWARD: stepBackward(); break;
                 case TURN_RIGHT: turnRight(); break;
+                case TURN_LEFT: turnRight(); turnRight(); turnRight(); break;
                 default:
                     throw new IllegalArgumentException("command is " + command + " is not yet supported");
             }

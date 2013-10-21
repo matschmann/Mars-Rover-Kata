@@ -106,5 +106,27 @@ public class RoverTest {
         assertThat(rover.getPositionOnGrid()).isEqualTo(expectedPosition);
 
     }
+    @Test
+    public void go_aLeftCircle_shouldArriveAtStartPosition() throws Exception {
+        // arrange
+        final Position expectedPosition = new Position(10, 10);
+
+        // act
+        Rover rover = new Rover(expectedPosition, Direction.EAST);
+        rover.go(Command.TURN_LEFT);
+        rover.go(Command.FORWARD);
+        rover.go(Command.TURN_LEFT);
+        rover.go(Command.FORWARD);
+        rover.go(Command.TURN_LEFT);
+        rover.go(Command.FORWARD);
+        rover.go(Command.TURN_LEFT);
+        rover.go(Command.FORWARD);
+
+
+        // assert
+        assertThat(rover).isNotNull();
+        assertThat(rover.getPositionOnGrid()).isEqualTo(expectedPosition);
+
+    }
 
 }
