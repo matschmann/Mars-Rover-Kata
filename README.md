@@ -12,4 +12,6 @@ The following features were implemented.
 * Implement commands that turn the rover left/right (l,r).
 * Implement wrapping from one edge of the grid to another. (planets are spheres after all)
 
-There is no AppRunner, it's just an API
+There is no AppRunner, it's just an API.
+
+The grid is a coordinate from (0,0) to (MAX_INT, MAX_INT).
