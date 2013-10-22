@@ -5,5 +5,5 @@ package de.rstandke;
  * @author rstandke
  */
 public enum  Direction {
-    NORTH, SOUTH, WEST, EAST;
+    NORTH, SOUTH, WEST, EAST
 }

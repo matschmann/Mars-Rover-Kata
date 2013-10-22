@@ -51,14 +51,8 @@ public class Position {
 
         Position position = (Position) o;
 
-        if (x != position.x) {
-            return false;
-        }
-        if (y != position.y) {
-            return false;
-        }
+        return x == position.x && y == position.y;
 
-        return true;
     }
 
     @Override

@@ -46,7 +46,7 @@ public class Rover {
      *     <li>'l' for turning left</li>
      *     <li>'r' for turning right</li>
      * </ul>
-     * @param commands
+     * @param commands command string
      * @throws IllegalArgumentException if command is unknown
      */
     public void go(String commands) {

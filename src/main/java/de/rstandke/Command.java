@@ -47,6 +47,6 @@ public enum Command {
 
             }
         }
-        return commandList.toArray(new Command[]{});
+        return commandList.toArray(new Command[commandList.size()]);
     }
 }
