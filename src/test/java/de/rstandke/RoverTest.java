@@ -20,7 +20,6 @@ public class RoverTest {
 
         // assert
         assertThat(rover).isNotNull();
-
     }
 
     @Test
@@ -35,7 +34,6 @@ public class RoverTest {
         rover.go(commands);
 
         // assert
-        assertThat(rover).isNotNull();
         assertThat(rover.getPositionOnGrid().getX()).isEqualTo(1);
     }
 
@@ -51,7 +49,6 @@ public class RoverTest {
         rover.go(commands);
 
         // assert
-        assertThat(rover).isNotNull();
         assertThat(rover.getPositionOnGrid().getX()).isEqualTo(3);
     }
 
@@ -68,7 +65,6 @@ public class RoverTest {
         rover.go(commands);
 
         // assert
-        assertThat(rover).isNotNull();
         assertThat(rover.getPositionOnGrid().getX()).isEqualTo(4);
     }
 
@@ -84,7 +80,6 @@ public class RoverTest {
         rover.go(commands);
 
         // assert
-        assertThat(rover).isNotNull();
         assertThat(rover.getPositionOnGrid().getY()).isEqualTo(3);
     }
 
@@ -100,7 +95,6 @@ public class RoverTest {
         rover.go(commands);
 
         // assert
-        assertThat(rover).isNotNull();
         assertThat(rover.getPositionOnGrid().getY()).isEqualTo(1);
     }
 
@@ -117,7 +111,6 @@ public class RoverTest {
 
 
         // assert
-        assertThat(rover).isNotNull();
         assertThat(rover.getPositionOnGrid()).isEqualTo(startPosition);
 
     }
@@ -135,7 +128,6 @@ public class RoverTest {
 
 
         // assert
-        assertThat(rover).isNotNull();
         assertThat(rover.getPositionOnGrid()).isEqualTo(startPosition);
     }
 
