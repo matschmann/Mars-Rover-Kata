@@ -1,8 +1,8 @@
 package de.rstandke;
 
 /**
+ * Describes a cardinal direction.
  * @author rstandke
- * @version ${project.version}
  */
 public enum  Direction {
     NORTH, SOUTH, WEST, EAST;

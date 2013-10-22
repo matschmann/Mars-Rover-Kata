@@ -2,12 +2,18 @@ package de.rstandke;
 
 
 /**
- *
+ * 2-D Position on a grid.
  * @author rstandke
  */
 public class Position {
     private int x, y;
 
+    /**
+     * Creates a new Position. Values must be positive.
+     * @param x horizontal value
+     * @param y vertical value
+     * @throws IllegalArgumentException if at least one value is negative
+     */
     public Position(int x, int y) {
         //check parameters
         if (x < 0 || y < 0) {

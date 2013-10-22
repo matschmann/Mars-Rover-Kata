@@ -1,7 +1,8 @@
 package de.rstandke;
 
 /**
- * A rover is a small vehicle that can be moved on a grid.
+ * A rover is a vehicle that can be moved on a grid. The grid is a coordinate from (0,0) to (MAX_INT, MAX_INT).
+ * If the Rover steps over the edge of the grid, it wraps around and the rover will be at position 0.
  * @author rstandke
  */
 public class Rover {
@@ -21,6 +22,7 @@ public class Rover {
     /**
      * Moves the rover around.
      * @param commands moving commands
+     * @throws IllegalArgumentException if command is unknown
      */
     public void go(Command... commands) {
         for (Command command : commands) {
@@ -37,8 +39,15 @@ public class Rover {
     }
 
     /**
-     * Moves the rover around.
+     * Moves the rover around. Commands are
+     * <ul>
+     *     <li>'f' for forward</li>
+     *     <li>'b' for backward</li>
+     *     <li>'l' for turning left</li>
+     *     <li>'r' for turning right</li>
+     * </ul>
      * @param commands
+     * @throws IllegalArgumentException if command is unknown
      */
     public void go(String commands) {
         go(Command.parseString(commands));

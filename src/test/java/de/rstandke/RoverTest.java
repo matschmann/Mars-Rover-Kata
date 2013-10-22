@@ -4,6 +4,9 @@ import org.junit.Test;
 
 import static org.fest.assertions.Assertions.assertThat;
 
+/**
+ * @author rstandke
+ */
 public class RoverTest {
 
     @Test

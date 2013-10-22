@@ -6,7 +6,6 @@ import static org.fest.assertions.Assertions.assertThat;
 
 /**
  * @author rstandke
- * @version ${project.version}
  */
 public class CommandTest {
 

@@ -10,9 +10,21 @@ import java.util.List;
 public enum Command {
     BACKWARD, FORWARD, TURN_RIGHT, TURN_LEFT;
 
-    public static Command[] parseString(String s) {
+    /**
+     * Takes a String with command letters an transforms it into a command array. Commands are
+     * <ul>
+     *     <li>'f' for Forward</li>
+     *     <li>'b' for Backward</li>
+     *     <li>'l' for turning left</li>
+     *     <li>'r' for turning right</li>
+     * </ul>
+     * @param commandString command string
+     * @return an array of commands
+     * @throws IllegalArgumentException if command is unknown
+     */
+    public static Command[] parseString(String commandString) {
         List<Command> commandList = new ArrayList<>();
-        for (char c : s.toCharArray()) {
+        for (char c : commandString.toCharArray()) {
             switch (c) {
                 case 'b':
                 case 'B':
