@@ -31,8 +31,6 @@ public class Rover {
                 case BACKWARD: stepBackward(); break;
                 case TURN_RIGHT: turnRight(); break;
                 case TURN_LEFT: turnRight(); turnRight(); turnRight(); break;
-                default:
-                    throw new IllegalArgumentException("command is " + command + " is not yet supported");
             }
             System.out.printf("moved to %s, direction is %s %n", position, direction);
         }
@@ -75,8 +73,6 @@ public class Rover {
             case WEST:stepEast(); break;
             case NORTH:stepSouth(); break;
             case SOUTH:stepNorth(); break;
-            default:
-                throw new IllegalArgumentException("direction is " + direction + " is not yet supported");
 
         }
     }
@@ -87,8 +83,6 @@ public class Rover {
             case WEST:stepWest(); break;
             case NORTH:stepNorth(); break;
             case SOUTH:stepSouth(); break;
-            default:
-                throw new IllegalArgumentException("direction is " + direction + " is not yet supported");
         }
     }
 
