@@ -1,18 +1,27 @@
 package de.rstandke;
 
 /**
+ * A rover is a small vehicle that can be moved on a grid.
  * @author rstandke
- * @version ${project.version}
  */
 public class Rover {
     private final Position position;
     private Direction direction;
 
+    /**
+     * Creates a new Rover.
+     * @param position initial position
+     * @param direction initial direction
+     */
     public Rover(Position position, Direction direction) {
         this.position = position;
         this.direction = direction;
     }
 
+    /**
+     * Moves the rover around.
+     * @param commands moving commands
+     */
     public void go(Command... commands) {
         for (Command command : commands) {
             switch (command) {
@@ -25,7 +34,21 @@ public class Rover {
             }
             System.out.printf("moved to %s, direction is %s %n", position, direction);
         }
+    }
 
+    /**
+     * Moves the rover around.
+     * @param commands
+     */
+    public void go(String commands) {
+        go(Command.parseString(commands));
+    }
+
+    /**
+     * @return the current position of the rover on the grid.
+     */
+    public Position getPositionOnGrid() {
+        return position;
     }
 
     private void turnRight() {
@@ -93,7 +116,4 @@ public class Rover {
         }
     }
 
-    public Position getPositionOnGrid() {
-        return position;
-    }
 }

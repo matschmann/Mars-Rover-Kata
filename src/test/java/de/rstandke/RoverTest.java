@@ -25,7 +25,7 @@ public class RoverTest {
         // arrange
         final Position position = new Position(0, 0);
         final Direction direction = Direction.EAST;
-        final Command[] commands = {Command.FORWARD, Command.BACKWARD, Command.FORWARD, Command.FORWARD, Command.BACKWARD};
+        final String commands = "FBFFB";
 
         // act
         Rover rover = new Rover(position, direction);
@@ -41,8 +41,7 @@ public class RoverTest {
         // arrange
         final Position position = new Position(0, 0);
         final Direction direction = Direction.EAST;
-        final Command[] commands = {Command.FORWARD, Command.BACKWARD, Command.FORWARD, Command.FORWARD,
-                Command.FORWARD, Command.BACKWARD, Command.FORWARD};
+        final String commands = "FBFFFBF";
 
         // act
         Rover rover = new Rover(position, direction);

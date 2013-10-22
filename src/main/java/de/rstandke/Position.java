@@ -1,10 +1,9 @@
 package de.rstandke;
 
-import java.math.BigDecimal;
 
 /**
+ *
  * @author rstandke
- * @version ${project.version}
  */
 public class Position {
     private int x, y;
