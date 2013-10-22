@@ -22,7 +22,6 @@ public class Rover {
     /**
      * Moves the rover around.
      * @param commands moving commands
-     * @throws IllegalArgumentException if command is unknown
      */
     public void go(Command... commands) {
         for (Command command : commands) {
